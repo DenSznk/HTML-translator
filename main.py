@@ -8,9 +8,15 @@ from deep_translator import GoogleTranslator
 
 # function to translate text
 def translate_text(text):
-    translation = GoogleTranslator(source='en', target='hi').translate(text)
-    return translation
-
+    # avoid to many symbols error
+    if len(text) <= 5000:
+        translation = GoogleTranslator(source='en', target='hi').translate(text)
+        return translation
+    else:
+        # divide the received text into pieces less than 5000
+        pieces = [text[i:i+4999] for i in range(0, len(text), 4999)]
+        translations = [GoogleTranslator(source='en', target='hi').translate(piece) for piece in pieces]
+        return ''.join(translations)
 
 
 # function to process a file
