@@ -41,4 +41,20 @@ After downloading the resources, I started writing python code for translation.
 After trying to find the correct API for translation I chose a deep translator.
 As an HTML parser, I decided bs4 library
 To eliminate errors that appeared due to a large number of incoming requests, I added a short pause after the translation
-To eliminate errors that text must be a valid text with a maximum of 5000 characters, otherwise, it cannot be translated. I divided the text into an allowable number of charactersю
+To eliminate errors that text must be a valid text with a maximum of 5000 characters, otherwise, it cannot be translated. I divided the text into an allowable number of characters
+
+You will need to start the application:
+    Download the project from Hithab using the address
+        https://github.com/denszn/html-translator.git
+
+    Install the virtual environment and install a requirements.txt file in it.
+
+    Move the folder with files to the root folder. Or set your way to the directory with files.
+
+    Run the program.
+
+P.S.
+The application finds the entire text in the files and correctly translates them.
+I think this code can be improved using the Google Claud APi translator application
+But since this paid service, I did not use it and developed my option.
+In general, I liked working on this test task, it was an interesting experience.
