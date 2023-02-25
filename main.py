@@ -6,6 +6,7 @@ import time
 from bs4 import BeautifulSoup
 from deep_translator import GoogleTranslator
 
+
 # function to translate text
 def translate_text(text):
     # avoid to many symbols error
@@ -59,10 +60,10 @@ def process_file(filename):
                     # catch any exceptions and print an error message
                     print(f'Error translating text: {e}')
 
-
     # write out the updated HTML
     with open(filename, 'w', encoding='utf-8') as f:
         f.write(str(soup))
+
 
 # function to process a directory
 def process_directory(directory):
@@ -74,6 +75,7 @@ def process_directory(directory):
                 # process the file
                 filepath = os.path.join(root, filename)
                 process_file(filepath)
+
 
 # process the current directory and its subdirectories
 process_directory('.')
