@@ -1,0 +1,44 @@
+# Html-translator
+
+Text translation app for tag content in HTML files.
+Firstly
+To download resources, I used the wget program because I had little experience with it
+I used the following commands:
+    wget \
+    --recursive         This option tells wget to download the site recursively, following links to all pages
+                        and resources within the site.
+    --level 1 \         This option limits the recursion depth to 1.
+    --page-requisites \ This option tells wget to download all the resources needed to display a web page,
+                         including images, CSS, and JavaScript files.
+    --adjust-extension \ This option tells wget to append the correct file extension to download files
+                        that may have had their extensions changed during the download process.
+    --span-hosts \      This option tells wget to download pages from other hosts as well.
+    --convert-links \   This option tells wget to convert all the links in the downloaded HTML files so
+                        that they point to the downloaded files on your local machine, rather than to the
+                        original URLs on the web.
+
+    --domains test-task-domain.com \ This option limits wget to downloading only resources from the
+                                    specified domain.
+    --no-parent \
+    --header 'User-Agent: My user agent'  specifies the user agent to use when downloading the website.
+    https://www.test-task-domain.com/
+    But some images have been preserved incorrectly
+
+
+Secondly
+I used the httrack program that was offered in the video.
+I used the following commands:
+httrack
+    http://www.example.com   URL of the website.
+     -O /path/to/save        Specifies the directory where the downloaded files will be saved.
+     -r                      to download the website recursively, meaning it will follow links and download pages linked to from the original website.
+     --user-agent "My user agent" Specifies the user agent to use when downloading the website.
+     --near=2                To download all images from other sites.
+But some images have been preserved incorrectly
+
+
+After downloading the resources, I started writing python code for translation.
+After trying to find the correct API for translation I chose a deep translator.
+As an HTML parser, I decided bs4 library
+To eliminate errors that appeared due to a large number of incoming requests, I added a short pause after the translation
+To eliminate errors that text must be a valid text with a maximum of 5000 characters, otherwise, it cannot be translated. I divided the text into an allowable number of charactersю
