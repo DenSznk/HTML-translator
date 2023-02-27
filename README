@@ -43,7 +43,9 @@ As an HTML parser, I decided bs4 library
 To eliminate errors that appeared due to a large number of incoming requests, I added a short pause after the translation
 To eliminate errors that text must be a valid text with a maximum of 5000 characters, otherwise, it cannot be translated. I divided the text into an allowable number of characters
 
-You will need to start the application:
+To upload to a live server I used avs C3, I made the folder public and indicated that the site is static, and registered the path to index.html the file
+
+To start the application you need:
     Download the project from Hithab using the address
         https://github.com/denszn/html-translator.git
 
